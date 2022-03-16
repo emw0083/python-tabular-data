@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-#Need to make it modular
+
 import sys
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -15,12 +15,11 @@ def setosa_scatter():
 
     """
 
-
 dataframe = pd.read_csv("iris.csv")
 
 #----------Scatter plot for setosa species-----------
 if __name__ == '__main__':
-
+    dataframe = pd.read_csv("iris.csv")
     setosa = dataframe[dataframe.species == "Iris_setosa"]
     x = setosa.petal_length_cm
     y = setosa.sepal_length_cm
@@ -43,7 +42,7 @@ def versicolor_scatter():
     
     """
 if __name__ == '__main__':
-
+    dataframe = pd.read_csv("iris.csv")
     versicolor = dataframe[dataframe.species == "Iris_versicolor"]
     x = versicolor.petal_length_cm
     y = versicolor.sepal_length_cm
@@ -68,9 +67,10 @@ def virginicia_scatter():
     """
 
 if __name__ == '__main__':
-    virginicia = dataframe[dataframe.species == "Iris_virginicia"]
-    x = virginicia.petal_length_cm
-    y = virginicia.sepal_length_cm
+    dataframe = pd.read_csv("iris.csv")
+    virginica = dataframe[dataframe.species == "Iris_virginica"]
+    x = virginica.petal_length_cm
+    y = virginica.sepal_length_cm
     regression = stats.linregress(x, y)
     slope = regression.slope
     intercept = regression.intercept
@@ -79,5 +79,6 @@ if __name__ == '__main__':
     plt.xlabel("Petal length (cm)")
     plt.ylabel("Sepal length (cm)")
     plt.legend()
-    plt.savefig("virginicia_petal_v_sepal_length_regress.png")
+    plt.savefig("virginica_petal_v_sepal_length_regress.png")
 
+exit()
