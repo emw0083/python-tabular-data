@@ -61,16 +61,23 @@ if __name__ == '__main__':
 
 #---------Scatter plot for virginicia species-------------
 
+def virginicia_scatter():
+    """
+    Makes a scatter plot that shows the linear regression of sepal length and petal length of of the Iris virginicia species
+    
+    """
 
-virginicia = dataframe[dataframe.species == "Iris_virginicia"]
-x = virginicia.petal_length_cm
-y = virginicia.sepal_length_cm
-regression = stats.linregress(x, y)
-slope = regression.slope
-intercept = regression.intercept
-plt.scatter(x, y, label = 'Data')
-plt.plot(x, slope * x + intercept, color = "orange", label = 'Fitted line')
-plt.xlabel("Petal length (cm)")
-plt.ylabel("Sepal length (cm)")
-plt.legend()
-plt.savefig("virginicia_petal_v_sepal_length_regress.png")
+if __name__ == '__main__':
+    virginicia = dataframe[dataframe.species == "Iris_virginicia"]
+    x = virginicia.petal_length_cm
+    y = virginicia.sepal_length_cm
+    regression = stats.linregress(x, y)
+    slope = regression.slope
+    intercept = regression.intercept
+    plt.scatter(x, y, label = 'Data')
+    plt.plot(x, slope * x + intercept, color = "orange", label = 'Fitted line')
+    plt.xlabel("Petal length (cm)")
+    plt.ylabel("Sepal length (cm)")
+    plt.legend()
+    plt.savefig("virginicia_petal_v_sepal_length_regress.png")
+
