@@ -82,3 +82,5 @@ if __name__ == '__main__':
     plt.savefig("virginica_petal_v_sepal_length_regress.png")
 
 exit()
+
+#need to figure out how to make three separate graphs rather than one graph for all three data sets 
